@@ -1,0 +1,38 @@
+﻿<Window x:Class="FitnessApp.DashBoard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FitnessApp"
+        mc:Ignorable="d"
+        Title="DashBoard" Height="550" Width="800">
+
+    <Grid Background="#29363F" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1.5*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border BorderBrush="#FF8B8B8B" BorderThickness="0 0 .3 0">
+            <Image Source="{DynamicResource Logo}" Width="200" Height="200">
+                <Image.Resources>
+                    <BitmapImage x:Key="Logo" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="E:\FitnessApp\FitnessApp\FitnessApp\img\admin_logo.png"/>
+                </Image.Resources>
+            </Image>
+        </Border>
+
+        <StackPanel VerticalAlignment="Center" Height="426" Grid.Column="1" Margin="0.4,70,-0.4,24.8">
+
+            <TextBlock  x:Name="welcomeLabel" TextAlignment="Left" Foreground="#FFA0A0A0" FontSize="22px" FontWeight="Bold" Margin="50,0,100,30" Text="Admin side"/>
+            <Button   x:Name="addButton" Margin="50,0,50,5" Content="Add client"   Height="40" Background="#FF2597CE" Foreground="#fff" Click="Button_Click" FontSize="18px"/>
+            <Button   x:Name="deleteButton" Margin="50,0,50,5" Content="Delete client" Height="40" Background="#FF2597CE" Foreground="#fff" Click="Button_Click1" FontSize="18px"/>
+            <Button   x:Name="searchButton" Margin="50,0,50,5" Content="Search client" Height="40" Background="#FF2597CE" Foreground="#fff" FontSize="18px" Click="searchButton_Click"/>
+            <Button   x:Name="listButton" Margin="50,0,50,5" Content="List clients" Height="40" Background="#FF2597CE" Foreground="#fff" FontSize="18px" Click="listButton_Click"/>
+            <Button   x:Name="listTicketsButton" Margin="50,0,50,5" Content="Clients ticket" Height="40" Background="#FF2597CE" Foreground="#fff" FontSize="18px" Click="listTicketsButton_Click"/>
+            <Button   x:Name="ticketsButton" Margin="50,0,50,5" Content="Tickets" Height="40" Background="#FF2597CE" Foreground="#fff" FontSize="18px" Click="ticketsButton_Click"/>
+            <Button   x:Name="entryListButton" Margin="50,0,50,5" Content="Entries" Height="40" Background="#FF2597CE" Foreground="#fff" FontSize="18px" Click="entryListButton_Click"/>
+            <Button   x:Name="sendEmailButton" Margin="50,0,50,10" Content="Send email" Height="40" Background="#FF2597CE" Foreground="#fff" FontSize="18px" Click="sendEmailButton_Click"/>
+
+        </StackPanel>
+    </Grid>
+</Window>

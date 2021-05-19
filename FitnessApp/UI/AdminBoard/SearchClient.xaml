@@ -1,0 +1,49 @@
+﻿<Window x:Class="FitnessApp.SearchClient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FitnessApp"
+        mc:Ignorable="d"
+        Title="SearchClient" Height="450" Width="800">
+    
+    <Grid Background="#29363F" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1.5*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Border BorderBrush="#FF8B8B8B" BorderThickness="0 0 .3 0">
+            <Image Source="{DynamicResource Logo}" Width="200" Height="200">
+                <Image.Resources>
+                    <BitmapImage x:Key="Logo" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="E:\FitnessApp\FitnessApp\FitnessApp\img\admin_logo.png"/>
+                </Image.Resources>
+            </Image>
+        </Border>
+        
+        <StackPanel VerticalAlignment="Center" Height="450" Grid.Column="1">
+            <TextBlock  x:Name="searchLabel" Text="Search client by barcode: " TextAlignment="Left" Foreground="#FFA0A0A0" FontSize="20px" Height="37" Margin="20,50,10,10" FontWeight="Bold"/>
+            <TextBox  x:Name="barcodeBox" Margin="50,0,50,0"  Height="35" Background="Transparent" BorderBrush="#FF2597CE" Foreground="White" TextAlignment="Center"  FontSize="16px" />
+            <Button   x:Name="SearchButton" Margin="100,10,100,5" Content="Search" Height="40" Background="#FF2597CE" Foreground="#fff" FontSize="18px" Click="SearchButton_Click"/>
+
+            <DataGrid Grid.Row="1" Margin="50,20,50,10" Name="dataGrid" ItemsSource="{Binding}" MinHeight="30" VerticalScrollBarVisibility="Auto">
+                <DataGrid.Resources>
+                    <Style TargetType="{x:Type DataGrid}">
+                        <Setter Property="Background" Value="LightBlue"/>
+                    </Style>
+
+                    <Style TargetType="{x:Type DataGridRowHeader}">
+                        <Setter Property="Background" Value="DeepSkyBlue"/>
+                    </Style>
+
+                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="Background" Value="CornflowerBlue"/>
+                    </Style>
+                </DataGrid.Resources>
+            </DataGrid>
+
+            <Button   x:Name="saveButton" Margin="50,10,50,5" Content="Update" Width="100" Height="40" Background="#FF2597CE" Foreground="#fff" FontSize="18px" Click="saveButton_Click"/>
+            
+        </StackPanel>
+    </Grid>
+</Window>

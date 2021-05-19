@@ -1,0 +1,51 @@
+﻿<Window x:Class="FitnessApp.UI.AdminBoard.Entries"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FitnessApp.UI.AdminBoard"
+        mc:Ignorable="d"
+        Title="Entries" Height="450" Width="800">
+
+    <ScrollViewer HorizontalScrollBarVisibility="Auto">
+
+        <Grid Background="#29363F" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1.5*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border BorderBrush="#FF8B8B8B" BorderThickness="0 0 .3 0">
+                <Image Source="{DynamicResource Logo}" Width="200" Height="200">
+                    <Image.Resources>
+                        <BitmapImage x:Key="Logo" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="E:\FitnessApp\FitnessApp\FitnessApp\img\admin_logo.png"/>
+                    </Image.Resources>
+                </Image>
+            </Border>
+
+            <StackPanel VerticalAlignment="Center" Height="450" Grid.Column="1">
+
+                <TextBlock  x:Name="infoLabel" Text="You can view your clients entries:" TextAlignment="Left" Foreground="#FFA0A0A0" FontSize="15px" Height="20" Margin="20,50,50,5" FontWeight="Light"/>
+
+                <DataGrid Grid.Row="1" Margin="60,30,210,20" Name="dtGrid" ItemsSource="{Binding}" MinHeight="50" VerticalScrollBarVisibility="Auto" CanUserAddRows="True" CanUserDeleteRows="True">
+                    <DataGrid.Resources>
+                        <Style TargetType="{x:Type DataGrid}">
+                            <Setter Property="Background" Value="LightBlue"/>
+                        </Style>
+
+                        <Style TargetType="{x:Type DataGridRowHeader}">
+                            <Setter Property="Background" Value="DeepSkyBlue"/>
+                        </Style>
+
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="CornflowerBlue"/>
+                        </Style>
+                    </DataGrid.Resources>
+                </DataGrid>
+
+            </StackPanel>
+
+        </Grid>
+
+    </ScrollViewer>
+</Window>
